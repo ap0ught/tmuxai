@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"regexp"
 
-	"github.com/alvinunreal/tmuxai/logger"
+	"github.com/ap0ught/tmuxai/logger"
 )
 
 var envPattern = regexp.MustCompile(`\$\{([^}]+)\}`)

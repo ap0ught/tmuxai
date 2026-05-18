@@ -9,10 +9,10 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/alvinunreal/tmuxai/config"
-	"github.com/alvinunreal/tmuxai/internal/mcp"
-	"github.com/alvinunreal/tmuxai/logger"
-	"github.com/alvinunreal/tmuxai/system"
+	"github.com/ap0ught/tmuxai/config"
+	"github.com/ap0ught/tmuxai/internal/mcp"
+	"github.com/ap0ught/tmuxai/logger"
+	"github.com/ap0ught/tmuxai/system"
 )
 
 const helpMessage = `Available commands:

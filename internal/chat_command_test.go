@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/alvinunreal/tmuxai/config"
-	"github.com/alvinunreal/tmuxai/system"
+	"github.com/ap0ught/tmuxai/config"
+	"github.com/ap0ught/tmuxai/system"
 	"github.com/stretchr/testify/assert"
 )
 

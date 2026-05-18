@@ -1,4 +1,4 @@
-module github.com/alvinunreal/tmuxai
+module github.com/ap0ught/tmuxai
 
 go 1.25.0
 

@@ -9,7 +9,7 @@ import (
 
 	mcpsdk "github.com/modelcontextprotocol/go-sdk/mcp"
 
-	"github.com/alvinunreal/tmuxai/logger"
+	"github.com/ap0ught/tmuxai/logger"
 )
 
 const (
