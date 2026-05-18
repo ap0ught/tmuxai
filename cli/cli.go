@@ -75,6 +75,7 @@ var rootCmd = &cobra.Command{
 		mgr, err := internal.NewManager(cfg, managerOptions)
 		if err != nil {
 			logger.Error("manager.NewManager failed: %v", err)
+			fmt.Fprintf(os.Stderr, "Error starting tmuxai: %v\n", err)
 			os.Exit(1)
 		}
 		defer mgr.Cleanup()
@@ -112,6 +113,7 @@ var rootCmd = &cobra.Command{
 
 		if err := mgr.Start(initMessage); err != nil {
 			logger.Error("manager.Start failed: %v", err)
+			fmt.Fprintf(os.Stderr, "Error running tmuxai: %v\n", err)
 			os.Exit(1)
 		}
 	},
