@@ -8,9 +8,9 @@
     Your intelligent pair programmer directly within your tmux sessions.
     <br/>
     <br/>
-    <a href="https://github.com/ap0ught/tmuxai/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/alvinunreal/tmuxai?style=flat-square"></a>
-    <a href="https://github.com/ap0ught/tmuxai/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/alvinunreal/tmuxai?style=flat-square"></a>
-    <a href="https://github.com/ap0ught/tmuxai/issues"><img alt="Issues" src="https://img.shields.io/github/issues/alvinunreal/tmuxai?style=flat-square"></a>
+    <a href="https://github.com/ap0ught/tmuxai/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/ap0ught/tmuxai?style=flat-square"></a>
+    <a href="https://github.com/ap0ught/tmuxai/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/ap0ught/tmuxai?style=flat-square"></a>
+    <a href="https://github.com/ap0ught/tmuxai/issues"><img alt="Issues" src="https://img.shields.io/github/issues/ap0ught/tmuxai?style=flat-square"></a>
     <br/>
     <br/>
     <sub>by <b>Boring Dystopia Development</b></sub>
