@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/alvinunreal/tmuxai/internal/mcp"
-	"github.com/alvinunreal/tmuxai/logger"
-	"github.com/alvinunreal/tmuxai/system"
+	"github.com/ap0ught/tmuxai/internal/mcp"
+	"github.com/ap0ught/tmuxai/logger"
+	"github.com/ap0ught/tmuxai/system"
 	"github.com/briandowns/spinner"
 )
 

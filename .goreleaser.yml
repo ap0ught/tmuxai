@@ -29,9 +29,9 @@ builds:
     flags:
       - -trimpath
     ldflags:
-      - -s -w -X github.com/alvinunreal/tmuxai/internal.Version=v{{.Version}}
-      - -s -w -X github.com/alvinunreal/tmuxai/internal.Commit={{.Commit}}
-      - -s -w -X github.com/alvinunreal/tmuxai/internal.Date={{.Date}}
+      - -s -w -X github.com/ap0ught/tmuxai/internal.Version=v{{.Version}}
+      - -s -w -X github.com/ap0ught/tmuxai/internal.Commit={{.Commit}}
+      - -s -w -X github.com/ap0ught/tmuxai/internal.Date={{.Date}}
 
   - id: osx
     goos:
@@ -42,9 +42,9 @@ builds:
     flags:
       - -trimpath
     ldflags:
-      - -s -w -X github.com/alvinunreal/tmuxai/internal.Version=v{{.Version}}
-      - -s -w -X github.com/alvinunreal/tmuxai/internal.Commit={{.Commit}}
-      - -s -w -X github.com/alvinunreal/tmuxai/internal.Date={{.Date}}
+      - -s -w -X github.com/ap0ught/tmuxai/internal.Version=v{{.Version}}
+      - -s -w -X github.com/ap0ught/tmuxai/internal.Commit={{.Commit}}
+      - -s -w -X github.com/ap0ught/tmuxai/internal.Date={{.Date}}
 
 archives:
   - name_template: >-
