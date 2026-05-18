@@ -71,7 +71,7 @@ type Manager struct {
 // NewManager creates a new manager agent
 func NewManager(cfg *config.Config, options ManagerOptions) (*Manager, error) {
 	if runtime.GOOS == "windows" {
-		return nil, fmt.Errorf("tmuxai is not supported on Windows/Cygwin terminals (including MobaXterm); please use Linux, macOS, or WSL")
+		return nil, fmt.Errorf("tmuxai is not supported on Windows (including Cygwin/MobaXterm terminals); please use Linux, macOS, or WSL")
 	}
 
 	paneId, err := system.TmuxCurrentPaneId()
