@@ -411,8 +411,8 @@ func (m *MCPManager) shutdownServerLocked(name string) {
 	delete(m.servers, name)
 }
 
-// killProcessGroup sends SIGKILL to the entire process group of a stdio server,
-// cleaning up any grandchild processes that the SDK's Close() might miss.
+// killProcessGroup terminates a stdio server process tree during shutdown.
+// On Unix it kills the full process group; on non-Unix it kills the direct child.
 func (m *MCPManager) killProcessGroup(name string) {
 	cmd, ok := m.cmds[name]
 	if !ok || cmd == nil || cmd.Process == nil {
