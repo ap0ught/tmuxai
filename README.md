@@ -130,7 +130,7 @@ go install github.com/ap0ught/tmuxai@main
 ```
 
 **Note:** The main branch contains the latest features and fixes but may be less stable than official releases.
-Also note that `go install` is silent on success and installs to your Go bin directory (`go env GOBIN`, or `$(go env GOPATH)/bin` when GOBIN is empty).
+Also note that `go install` is silent on success and installs to your Go bin directory: `go env GOBIN` when set, or the `bin` directory of the first entry in `go env GOPATH` when `GOBIN` is empty. If you're unsure where the binary was installed, check both `go env GOBIN` and `go env GOPATH`.
 
 ## Post-Installation Setup
 
