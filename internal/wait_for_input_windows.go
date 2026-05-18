@@ -4,6 +4,7 @@ package internal
 
 import (
 	"fmt"
+	"os"
 	"time"
 
 	"golang.org/x/sys/windows"
@@ -18,7 +19,15 @@ func waitForInput(fd int, timeout time.Duration) (bool, error) {
 		pollTimeout = 1
 	}
 
-	result, err := windows.WaitForSingleObject(windows.Handle(fd), pollTimeout)
+	handle, err := windows.GetStdHandle(windows.STD_INPUT_HANDLE)
+	if err != nil {
+		return false, err
+	}
+	if fd != int(os.Stdin.Fd()) {
+		handle = windows.Handle(fd)
+	}
+
+	result, err := windows.WaitForSingleObject(handle, pollTimeout)
 	if err != nil {
 		return false, err
 	}
