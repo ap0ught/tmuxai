@@ -10,7 +10,6 @@ import (
 	"strings"
 	"sync"
 	"sync/atomic"
-	"syscall"
 	"time"
 
 	mcpsdk "github.com/modelcontextprotocol/go-sdk/mcp"
@@ -123,7 +122,7 @@ func (m *MCPManager) initServer(name string, sc ServerConfig) error {
 	switch resolvedType {
 	case "stdio":
 		cmd = exec.Command(sc.Command, sc.Args...)
-		cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
+		configureProcessGroup(cmd)
 		if len(sc.Env) > 0 {
 			cmd.Env = append(cmd.Environ(), envSlice(sc.Env)...)
 		}
@@ -412,17 +411,14 @@ func (m *MCPManager) shutdownServerLocked(name string) {
 	delete(m.servers, name)
 }
 
-// killProcessGroup sends SIGKILL to the entire process group of a stdio server,
-// cleaning up any grandchild processes that the SDK's Close() might miss.
+// killProcessGroup terminates a stdio server process tree during shutdown.
+// On Unix it kills the full process group; on non-Unix it kills the direct child.
 func (m *MCPManager) killProcessGroup(name string) {
 	cmd, ok := m.cmds[name]
 	if !ok || cmd == nil || cmd.Process == nil {
 		return
 	}
-	pgid, err := syscall.Getpgid(cmd.Process.Pid)
-	if err == nil {
-		_ = syscall.Kill(-pgid, syscall.SIGKILL)
-	}
+	killCmdProcessGroup(cmd)
 	delete(m.cmds, name)
 }
 
