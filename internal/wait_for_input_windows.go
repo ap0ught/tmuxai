@@ -22,12 +22,12 @@ func waitForInput(fd int, timeout time.Duration) (bool, error) {
 
 	handle, err := windows.GetStdHandle(windows.STD_INPUT_HANDLE)
 	if err != nil {
-		return false, err
+		return false, fmt.Errorf("failed to get stdin handle: %w", err)
 	}
 
 	result, err := windows.WaitForSingleObject(handle, pollTimeout)
 	if err != nil {
-		return false, err
+		return false, fmt.Errorf("WaitForSingleObject failed: %w", err)
 	}
 
 	switch result {
