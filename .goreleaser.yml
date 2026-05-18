@@ -70,11 +70,11 @@ changelog:
 brews:
   - name: tmuxai
     repository:
-      owner: alvinunreal
+      owner: ap0ught
       name: homebrew-tmuxai
     commit_author:
-      name: alvinunreal
-      email: alvin@tmuxai.dev
+      name: github-actions[bot]
+      email: 41898282+github-actions[bot]@users.noreply.github.com
     directory: Formula
     dependencies:
       - name: tmux
@@ -85,7 +85,7 @@ brews:
 
 nfpms:
   - file_name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
-    maintainer: alvinunreal
+    maintainer: ap0ught
     homepage: https://tmuxai.dev
     description: AI-Powered, Non-Intrusive Terminal Assistant
     license: "Apache-2.0"
