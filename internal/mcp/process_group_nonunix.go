@@ -9,5 +9,8 @@ func configureProcessGroup(cmd *exec.Cmd) {
 }
 
 func killCmdProcessGroup(cmd *exec.Cmd) {
-	_ = cmd
+	if cmd == nil || cmd.Process == nil {
+		return
+	}
+	_ = cmd.Process.Kill()
 }
