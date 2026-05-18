@@ -4,13 +4,14 @@ package internal
 
 import (
 	"fmt"
-	"os"
 	"time"
 
 	"golang.org/x/sys/windows"
 )
 
 func waitForInput(fd int, timeout time.Duration) (bool, error) {
+	_ = fd // readEscapeSequence passes stdin; Windows waits on the stdin handle directly.
+
 	if timeout <= 0 {
 		timeout = 10 * time.Millisecond
 	}
@@ -22,9 +23,6 @@ func waitForInput(fd int, timeout time.Duration) (bool, error) {
 	handle, err := windows.GetStdHandle(windows.STD_INPUT_HANDLE)
 	if err != nil {
 		return false, err
-	}
-	if fd != int(os.Stdin.Fd()) {
-		handle = windows.Handle(fd)
 	}
 
 	result, err := windows.WaitForSingleObject(handle, pollTimeout)
